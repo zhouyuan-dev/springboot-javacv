@@ -25,6 +25,42 @@
         <javacv.version>1.5.9</javacv.version>
     </properties>
 
+    <!-- 添加 Maven 仓库配置 -->
+    <repositories>
+        <!-- 阿里云镜像 -->
+        <repository>
+            <id>aliyun</id>
+            <name>Aliyun Maven Mirror</name>
+            <url>https://maven.aliyun.com/nexus/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <!-- 中央仓库 -->
+        <repository>
+            <id>central</id>
+            <name>Maven Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+
+        <!-- ByteDeco 官方仓库 -->
+        <repository>
+            <id>bytedeco</id>
+            <name>ByteDeco Repository</name>
+            <url>https://maven.org/bytedeco/repo</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
     <dependencies>
         <!-- Spring Boot Web -->
         <dependency>
@@ -46,7 +82,7 @@
             <version>4.5.2-${javacv.version}</version>
         </dependency>
 
-        <!-- OpenCV Platform -->
+        <!-- OpenCV Platform (自动选择本地平台) -->
         <dependency>
             <groupId>org.bytedeco</groupId>
             <artifactId>opencv-platform</artifactId>
