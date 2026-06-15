@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: springboot-javacv
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    com.example: DEBUG
